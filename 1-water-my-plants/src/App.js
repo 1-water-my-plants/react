@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
 
-function App() {
+import Plants from './components/Plants'
+
+const App = () => {
   return (
     <div className="App">
-    <h1>Hello World</h1>
-      
+    <h1>Welcome</h1>
+    <Plants/>
+
     </div>
   );
 }
