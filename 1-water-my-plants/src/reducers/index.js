@@ -38,6 +38,24 @@ function rootReducer(state = initialState, action) {
             ...state,
             error: action.payload
           };
+          case GET_API_START:
+          return {
+            ...state,
+            error: "",
+            isFetching: true
+          };
+        case GET_API_SUCCESS:
+          return {
+            ...state,
+            api: action.payload,
+            isFetching: false,
+            error: ""
+          };
+        case GET_API_FAILURE:
+          return {
+            ...state,
+            error: action.payload
+          };
         default:
           return state;
       }

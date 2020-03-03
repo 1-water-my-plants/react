@@ -12,15 +12,6 @@ export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
-// export const regUser = () => dispatch => {
-//     dispatch({ type: REG_USER_START });
-//     axios
-//       .post('https://webpt9-water-my-plants.herokuapp.com/api/auth/register')
-//       .then(res =>
-//         dispatch({ type: REG_USER_SUCCESS, payload: res.data.results })
-//       )
-//       .catch(err => dispatch({ type: REG_USER_FAILURE, payload: err }));
-//   };
 
   export const getApi = () => dispatch => {
     dispatch({ type: GET_API_START });
@@ -38,5 +29,17 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
         });
       });
   };
+
+  export const regUser = user => dispatch => {
+    dispatch({ type: REG_USER_START });
+    axios
+      .post('https://webpt9-water-my-plants.herokuapp.com/api/auth/register', user)
+      .then(res => {
+        console.log(user, "user");
+        dispatch({ type: REG_USER_SUCCESS, payload: user })
+        })
+      .catch(err => dispatch({ type: REG_USER_FAILURE, payload: err }));
+  };
+
 
   
