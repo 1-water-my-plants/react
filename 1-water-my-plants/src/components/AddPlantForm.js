@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { axiosWithAuth} from './axiosWithAuth';
 import axios from "axios";
 
+const userId = localStorage.getItem("userId")
+
 const initialItem = {
     "nickname": "",
     "species": "",
     "h2oFrequency": 1,
     "image": "",
-    "user_id": 8
+    "user_id": {userId}
 };
 
 
@@ -74,13 +76,7 @@ const handleSubmit = e => {
         />
         <div className="baseline" />
 
-        <input
-          type="string"
-          name="user_id"
-          onChange={changeHandler}
-          placeholder="user_id"
-          value={item.user_id}
-        />
+        <p>user id : {userId}</p>
         <div className="baseline" />
 
         <button className="md-button form-button">Add New Item</button>
