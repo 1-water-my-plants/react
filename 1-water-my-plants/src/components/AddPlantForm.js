@@ -9,7 +9,7 @@ const initialItem = {
     "species": "",
     "h2oFrequency": 1,
     "image": "",
-    "user_id": {userId}
+    "user_id": localStorage.getItem("userId")
 };
 
 
@@ -76,7 +76,7 @@ const handleSubmit = e => {
         />
         <div className="baseline" />
 
-        <p>user id : {userId}</p>
+        <p>user id : {localStorage.getItem("userId")}</p>
         <div className="baseline" />
 
         <button className="md-button form-button">Add New Item</button>
