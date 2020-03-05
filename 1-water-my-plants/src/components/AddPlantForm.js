@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth} from './axiosWithAuth';
+import axios from "axios";
 
 const initialItem = {
     "nickname": "",
@@ -15,6 +16,7 @@ const AddPlantForm = props => {
 
     const changeHandler = ev => {
       ev.persist();
+        let value = ev.target.value;
         setItem({
           ...item,
           [ev.target.name]: ev.target.value
