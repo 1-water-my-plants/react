@@ -33,6 +33,7 @@ const handleSubmit = e => {
       .post(`https://webpt9-water-my-plants.herokuapp.com/api/${userId}/plants`, item)
       .then(res => {
           console.log(res);
+          window.location.reload(false);
         })
       .catch(err => console.log(err.message));
   };
