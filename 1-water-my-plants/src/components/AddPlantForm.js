@@ -39,7 +39,7 @@ const handleSubmit = e => {
 
   return (
     <div>
-      <h2>Add New Item</h2>
+      <h2>Add New Plant</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
