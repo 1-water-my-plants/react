@@ -15,6 +15,7 @@ const initialItem = {
 
 const AddPlantForm = props => {
     const [item, setItem] = useState(initialItem)
+    const userId = localStorage.getItem("userId")
 
     const changeHandler = ev => {
       ev.persist();
@@ -29,7 +30,7 @@ const AddPlantForm = props => {
 const handleSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post(`https://webpt9-water-my-plants.herokuapp.com/api/8/plants`, item)
+      .post(`https://webpt9-water-my-plants.herokuapp.com/api/${userId}/plants`, item)
       .then(res => {
           console.log(res);
         })
