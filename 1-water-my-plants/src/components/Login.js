@@ -19,7 +19,10 @@ const Login = (props) => {
         .post("https://webpt9-water-my-plants.herokuapp.com/api/auth/login", login)
         // .then(res => console.log(res))
         .then(res => {
-            localStorage.setItem("token", res.data.payload);
+            localStorage.setItem("token", res.data.token);
+            console.log(res.data.token);
+            localStorage.setItem("userId", res.data.user.id);
+            console.log(res.data.user.id);
             props.history.push("/profile");
         })
         .catch(err => console.log(err, "err in the login part"))

@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
+import AddPlantForm from './AddPlantForm';
+import GetPlants from './GetPlants';
+
 const Profile = () => {
 
     return(
-        <h2>Welcome to the user profile</h2>
+        <>
+        <AddPlantForm />
+        <GetPlants />
+        </>
     )
 }
 
